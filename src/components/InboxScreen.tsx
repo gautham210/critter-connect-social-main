@@ -2,12 +2,12 @@
 import { useNavigate } from "react-router-dom";
 
 const mockChats = [
-  { id: "dog", name: "Barky", lastMessage: "bow wow!", avatar: "/dog.png" },
-  { id: "cat", name: "Meowzart", lastMessage: "meowww", avatar: "/cat.png" },
-  { id: "cow", name: "MooMoo", lastMessage: "moooo", avatar: "/cow.png" },
-  { id: "duck", name: "Quackie", lastMessage: "quack quack", avatar: "/duck.png" },
-  { id: "lion", name: "Roary", lastMessage: "roaarrr", avatar: "/lion.png" },
-  { id: "elephant", name: "Trunky", lastMessage: "phrrr!", avatar: "/elephant.png" },
+  { id: "dog", name: "Barky", lastMessage: "bow wow!" },
+  { id: "cat", name: "Meowzart", lastMessage: "meowww" },
+  { id: "cow", name: "MooMoo", lastMessage: "moooo" },
+  { id: "duck", name: "Quackie", lastMessage: "quack quack" },
+  { id: "lion", name: "Roary", lastMessage: "roaarrr" },
+  { id: "elephant", name: "Trunky", lastMessage: "phrrr!" },
 ];
 
 export default function InboxScreen() {

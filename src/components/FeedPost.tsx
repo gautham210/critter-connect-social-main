@@ -23,10 +23,15 @@ export function FeedPost({
 }: FeedPostProps) {
   const [liked, setLiked] = useState(false);
   const [likes, setLikes] = useState(initialLikes || 0);
+  const [imageError, setImageError] = useState(false);
 
   const toggleLike = () => {
     setLiked(!liked);
     setLikes((prev) => (liked ? prev - 1 : prev + 1));
+  };
+
+  const handleImageError = () => {
+    setImageError(true);
   };
 
   return (
@@ -34,11 +39,18 @@ export function FeedPost({
       {/* Header */}
       <div className="p-4 flex items-center gap-3">
         <div className="w-10 h-10 rounded-full overflow-hidden shadow-soft">
-          <img
-            src={profileImage}
-            alt={username}
-            className="w-full h-full object-cover"
-          />
+          {!imageError ? (
+            <img
+              src={profileImage}
+              alt={username}
+              className="w-full h-full object-cover"
+              onError={handleImageError}
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-paw flex items-center justify-center text-white text-sm font-bold">
+              {username.charAt(0).toUpperCase()}
+            </div>
+          )}
         </div>
         <span className="font-medium text-foreground">{username}</span>
       </div>

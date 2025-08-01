@@ -3,11 +3,16 @@ import { useEffect, useState } from "react";
 import { FeedPost } from "./FeedPost";
 import { supabase } from "@/integrations/supabase/client";
 
+// Import profile images properly for Vite production builds
+import catProfile from "@/assets/cat-profile-1.jpg";
+import dogProfile from "@/assets/dog-profile-1.jpg";
+import rabbitProfile from "@/assets/rabbit-profile-1.jpg";
+
 // Available profile images
 const profileImages = [
-  "/src/assets/cat-profile-1.jpg",
-  "/src/assets/dog-profile-1.jpg", 
-  "/src/assets/rabbit-profile-1.jpg"
+  catProfile,
+  dogProfile,
+  rabbitProfile
 ];
 
 // Function to get a random profile image
